@@ -30,8 +30,25 @@ function arreglos(){
      console.log('No es una pera');
     }
 }
+//Agregar evento a un elemento html
 document.getElementById("btnSaludar").addEventListener(
     "click", function () {
        console.log("Hola!");
+    }
+);
+
+//Modificar el HTML a traves del DOM
+document.getElementById("btnAgregar").addEventListener(
+    "click", () => {
+        //Obtener el elemento "lista" (ul) del documento html
+        let lista = document.getElementById("lista");
+        //Creando un nuevo elemento html, li = list item
+        let nuevoItem = document.createElement("li");
+        //Obteniendo el total de items de la lista
+        let totalItems = lista.childElementCount;
+        //Agregando un contenido (texto) al item
+        nuevoItem.textContent = `Item ${totalItems + 1}`;
+        //Agregar item a la lista
+        lista.appendChild(nuevoItem);
     }
 )
