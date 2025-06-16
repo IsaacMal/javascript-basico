@@ -57,8 +57,9 @@ function addPalabralista(){
     let input = document.getElementById("txtEntrada");
     //Obtener el valor de input
     const texto = input.value.trim();
+    if (text === "") return;
     //Transformar a Mayuscula
-    const textMayuscula = texto.toUppercase()
+    const textMayuscula = texto.toUpperCase();
     //Agregar item a la lista
     let lista = document.getElementById("lstPalabras");
     //Creando un nuevo elemento html, li = list item
@@ -67,7 +68,11 @@ function addPalabralista(){
     nuevoItem.textContent = textMayuscula;
     //Agregar item a la lista
     lista.appendChild(nuevoItem);
+    //Limpiar y establecer foco
+    input.value = "";
+    input.focus();
 }
 document.getElementById("btnAddPalabra").addEventListener(
     "click", addPalabralista 
+    
 );
