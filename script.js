@@ -51,4 +51,23 @@ document.getElementById("btnAgregar").addEventListener(
         //Agregar item a la lista
         lista.appendChild(nuevoItem);
     }
-)
+);
+function addPalabralista(){
+    //Obtener el input del html
+    let input = document.getElementById("txtEntrada");
+    //Obtener el valor de input
+    const texto = input.value.trim();
+    //Transformar a Mayuscula
+    const textMayuscula = texto.toUppercase()
+    //Agregar item a la lista
+    let lista = document.getElementById("lstPalabras");
+    //Creando un nuevo elemento html, li = list item
+    let nuevoItem = document.createElement("li");
+    //Agregando un contenido (texto) al item
+    nuevoItem.textContent = textMayuscula;
+    //Agregar item a la lista
+    lista.appendChild(nuevoItem);
+}
+document.getElementById("btnAddPalabra").addEventListener(
+    "click", addPalabralista 
+);
