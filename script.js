@@ -30,3 +30,8 @@ function arreglos(){
      console.log('No es una pera');
     }
 }
+document.getElementById("btnSaludar").addEventListener(
+    "click", function () {
+       console.log("Hola!");
+    }
+)
